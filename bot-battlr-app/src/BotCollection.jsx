@@ -1,5 +1,6 @@
 
 import React from 'react';
+import './styles.css';
 
 function BotCollection({ bots, onBotClick, onEnlist }) {
   return (

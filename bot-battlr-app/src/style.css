@@ -1,0 +1,74 @@
+/* styles.css */
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Main container styles */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* BotCollection styles */
+.bot-collection {
+  flex: 1;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.bot-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.bot-card button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+/* YourBotArmy styles */
+.your-bot-army {
+  flex: 1;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.your-bot-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.your-bot-card button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}

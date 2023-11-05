@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import BotCollection from './BotCollection';
-import YourBotArmy from './YourBotArmy';
+import YourBotArmy from './YourBotarmy';
 
 function App() {
   const [bots, setBots] = useState([]);
@@ -10,7 +10,7 @@ function App() {
 
   // Fetch bots from the server on component mount
   useEffect(() => {
-    fetch('/bots')
+    fetch('http://localhost:3000/bots')
       .then((response) => response.json())
       .then((data) => setBots(data));
   }, []);

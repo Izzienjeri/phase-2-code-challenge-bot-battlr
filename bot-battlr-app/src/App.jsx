@@ -6,11 +6,13 @@ import "./App.css";
 
 function App() {
   const [enlistedBots, setEnlistedBots] = useState([]);
+  const [botsToDischarge, setBotsToDischarge] = useState([]);
 
-  // Function to handle enlisting a bot
   const handleEnlistBot = (botToEnlist) => {
-    const updatedEnlistedBots = [...enlistedBots, botToEnlist];
-    setEnlistedBots(updatedEnlistedBots);
+    // Check if the bot is not already enlisted
+    if (!enlistedBots.find((bot) => bot.id === botToEnlist.id)) {
+      setEnlistedBots([...enlistedBots, botToEnlist]);
+    }
   };
 
   // Function to handle releasing a bot
@@ -19,6 +21,12 @@ function App() {
       (bot) => bot.id !== botToRelease.id
     );
     setEnlistedBots(updatedEnlistedBots);
+  };
+
+  const handleDischargeBot = (botToDischarge) => {
+    // This is where you should implement the logic to remove the bot from the backend.
+    // You can also add it to the botsToDischarge array for removal from the frontend.
+    setBotsToDischarge([...botsToDischarge, botToDischarge]);
   };
 
   return (

@@ -23,15 +23,29 @@ function App() {
     setEnlistedBots(updatedEnlistedBots);
   };
 
-  const handleDischargeBot = (botToDischarge) => {
-    // This is where you should implement the logic to remove the bot from the backend.
-    // You can also add it to the botsToDischarge array for removal from the frontend.
+  const handleDischargeBot = async (botToDischarge) => {
     setBotsToDischarge([...botsToDischarge, botToDischarge]);
+
+    try {
+      await fetch(`http://localhost:3000/botsL/${botToDischarge.id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      // Handle successful removal from the backend if needed.
+    } catch (error) {
+      console.error("Error removing the bot from the backend: ", error);
+    }
   };
 
   return (
     <div className="App">
-      <BotCollection onEnlistBot={handleEnlistBot} />
+      <BotCollection
+        onEnlistBot={handleEnlistBot}
+        onDischargeBot={handleDischargeBot}
+      />
       <YourBotarmy
         enlistedBots={enlistedBots}
         onReleaseBot={handleReleaseBot}

@@ -1,9 +1,12 @@
 import React from "react";
 
-function BotCard({ bot, onEnlistBot }) {
+function BotCard({ bot, onEnlistBot, onDischargeBot }) {
   const handleEnlistClick = () => {
-    // Call the onEnlistBot function with the bot data
     onEnlistBot(bot);
+  };
+
+  const handleDischargeClick = () => {
+    onDischargeBot(bot);
   };
 
   return (
@@ -13,6 +16,10 @@ function BotCard({ bot, onEnlistBot }) {
       <img src={bot.avatar_url} alt={bot.name} />
       {/* Add a button to enlist the bot */}
       <button onClick={handleEnlistClick}>Enlist</button>
+      {/* Add a button to discharge the bot */}
+      <button onClick={handleDischargeClick} className="discharge-button">
+        Discharge
+      </button>
     </div>
   );
 }

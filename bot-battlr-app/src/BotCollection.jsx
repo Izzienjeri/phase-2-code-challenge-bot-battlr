@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import BotCard from "./BotCard";
 
-function BotCollection({ onEnlistBot }) {
+function BotCollection({ onEnlistBot, onDischargeBot }) {
   const [bots, setBots] = useState([]);
 
   useEffect(() => {
@@ -15,7 +15,12 @@ function BotCollection({ onEnlistBot }) {
     <div>
       {/* Map through the bots and render BotCard components */}
       {bots.map((bot) => (
-        <BotCard key={bot.id} bot={bot} onEnlistBot={onEnlistBot} />
+        <BotCard
+          key={bot.id}
+          bot={bot}
+          onEnlistBot={onEnlistBot}
+          onDischargeBot={onDischargeBot}
+        />
       ))}
     </div>
   );

@@ -1,14 +1,16 @@
 
 import React, { useState, useEffect } from 'react';
 import BotCollection from './BotCollection';
+import BotSpecs from "./BotSpecs"
 import YourBotArmy from './YourBotarmy';
+import './style.css';
 
 function App() {
   const [bots, setBots] = useState([]);
   const [army, setArmy] = useState([]);
   const [botDetails, setBotDetails] = useState(null);
 
-  // Fetch bots from the server on component mount
+  // Fetching bots from the server 
   useEffect(() => {
     fetch('http://localhost:3000/bots')
       .then((response) => response.json())
@@ -34,7 +36,7 @@ function App() {
   );
 
   function handleEnlist(bot) {
-    // Check if the bot is already enlisted
+    // Checking if the bot is already enlisted
     if (!army.find((enlistedBot) => enlistedBot.id === bot.id)) {
       setArmy([...army, bot]);
     }

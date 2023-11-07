@@ -1,6 +1,6 @@
 import React from "react";
 
-function YourBotArmy({ enlistedBots, onReleaseBot }) {
+function YourBotarmy({ enlistedBots, onReleaseBot }) {
   return (
     <div>
       {/* Check if enlistedBots is defined before mapping */}
@@ -13,4 +13,4 @@ function YourBotArmy({ enlistedBots, onReleaseBot }) {
     </div>
   );
 }
-export default YourBotArmy;
+export default YourBotarmy;

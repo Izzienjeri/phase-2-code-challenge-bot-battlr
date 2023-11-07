@@ -3,8 +3,8 @@ import React from "react";
 function YourBotArmy({ enlistedBots, onReleaseBot }) {
   return (
     <div>
-      {/* Map through the enlisted bots and render them */}
-      {enlistedBots.map((bot) => (
+      {/* Check if enlistedBots is defined before mapping */}
+      {enlistedBots?.map((bot) => (
         <div key={bot.id} className="enlisted-bot">
           <h3>{bot.name}</h3>
           <button onClick={() => onReleaseBot(bot)}>Release</button>
@@ -13,5 +13,4 @@ function YourBotArmy({ enlistedBots, onReleaseBot }) {
     </div>
   );
 }
-
 export default YourBotArmy;

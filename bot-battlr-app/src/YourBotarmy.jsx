@@ -1,18 +1,22 @@
 import React from "react";
-import "./App.css";
 
-function YourBotArmy({ army, onRelease }) {
+function YourBotArmy({ enlistedBots, botProfiles }) {
+  const armyBots = botProfiles.filter((bot) => enlistedBots.includes(bot.id));
+  if (!botProfiles || botProfiles.length === 0) {
+    return <p>No bot profiles available.</p>;
+  }
+
   return (
     <div>
       <h2>Your Bot Army</h2>
-      {army.map((bot) => (
-        <div key={bot.id}>
-          <h3>{bot.name}</h3>
-          <p>Health: {bot.health}</p>
-          <p>Damage: {bot.damage}</p>
-          <button onClick={() => onRelease(bot)}>Release</button>
-        </div>
-      ))}
+      <ul>
+        {armyBots.map((bot) => (
+          <li key={bot.id}>
+            <p>Name: {bot.name}</p>
+            <p>Description: {bot.description}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

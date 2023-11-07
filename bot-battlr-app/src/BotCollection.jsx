@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function BotCollection() {
   const [botProfiles, setBotProfiles] = useState([]);
+  const [enlistedBots, setEnlistedBots] = useState([]);
 
   useEffect(() => {
     // Fetch bot profiles when the component mounts
@@ -22,16 +23,21 @@ function BotCollection() {
     }
   };
 
+  const enlistBot = (botId) => {
+    if (!enlistedBots.includes(botId)) {
+      setEnlistedBots([...enlistedBots, botId]);
+    }
+  };
+
   return (
     <div>
       <h1>Bot Profiles</h1>
       <ul>
         {botProfiles.map((bot) => (
           <li key={bot.id}>
-            {/* Render bot profile information here */}
             <p>Name: {bot.name}</p>
             <p>Description: {bot.description}</p>
-            {/* Add more fields as needed */}
+            <button onClick={() => enlistBot(bot.id)}>Enlist</button>
           </li>
         ))}
       </ul>

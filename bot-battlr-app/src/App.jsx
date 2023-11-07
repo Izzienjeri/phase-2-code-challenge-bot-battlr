@@ -2,6 +2,7 @@ import React from "react";
 import BotCollection from "./BotCollection";
 import YourBotarmy from "./YourBotarmy";
 import { useState } from "react";
+import BotCard from "./BotCard";
 
 function App() {
   const [enlistedBots, setEnlistedBots] = useState([]);

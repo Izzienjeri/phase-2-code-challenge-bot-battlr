@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import BotCard from "./BotCard";
 
 function BotCollection() {
   const [bots, setBots] = useState([]);

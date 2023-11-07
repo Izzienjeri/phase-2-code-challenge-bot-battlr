@@ -1,9 +1,9 @@
 import React from "react";
+import BotCard from "./BotCard";
 
 function YourBotarmy({ enlistedBots, onReleaseBot }) {
   return (
     <div>
-      {/* Check if enlistedBots is defined before mapping */}
       {enlistedBots?.map((bot) => (
         <div key={bot.id} className="enlisted-bot">
           <h3>{bot.name}</h3>
@@ -13,4 +13,5 @@ function YourBotarmy({ enlistedBots, onReleaseBot }) {
     </div>
   );
 }
+
 export default YourBotarmy;

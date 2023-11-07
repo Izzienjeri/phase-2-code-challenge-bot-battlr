@@ -1,17 +1,20 @@
-// BotSpecs.js
-import React from 'react';
+import React from "react";
 
-function BotSpecs({ bot, onEnlist, onClose }) {
+function BotCard({ bot, onEnlistBot }) {
+  const handleEnlistClick = () => {
+    // Call the onEnlistBot function with the bot data
+    onEnlistBot(bot);
+  };
+
   return (
-    <div>
-      <h2>Bot Details</h2>
-      <h3>{bot.name}</h3>
-      <p>Health: {bot.health}</p>
-      <p>Damage: {bot.damage}</p>
-      <button onClick={() => onEnlist(bot)}>Enlist</button>
-      <button onClick={() => onClose()}>Close</button>
+    <div className="bot-card">
+      {/* Display bot information */}
+      <h2>{bot.name}</h2>
+      <img src={bot.avatar_url} alt={bot.name} />
+      {/* Add a button to enlist the bot */}
+      <button onClick={handleEnlistClick}>Enlist</button>
     </div>
   );
 }
 
-export default BotSpecs;
+export default BotCard;
